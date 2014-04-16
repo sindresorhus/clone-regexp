@@ -1,0 +1,31 @@
+{
+	"name": "clone-regexp",
+	"description": "Clone and modify a RegExp instance",
+	"license": "MIT",
+	"main": "browser.js",
+	"authors": [
+		{
+			"name": "Sindre Sorhus",
+			"email": "sindresorhus@gmail.com",
+			"url": "http://sindresorhus.com"
+		}
+	],
+	"keywords": [
+		"regexp",
+		"regex",
+		"re",
+		"regular",
+		"expression",
+		"clone",
+		"duplicate",
+		"modify",
+		"mutate"
+	],
+	"ignore": [
+		"**/.*",
+		"component.json",
+		"package.json",
+		"test.js",
+		"index.js"
+	]
+}

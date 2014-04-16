@@ -1,0 +1,21 @@
+{
+	"name": "clone-regexp",
+	"version": "0.0.0",
+	"description": "Clone and modify a RegExp instance",
+	"license": "MIT",
+	"repo": "sindresorhus/clone-regexp",
+	"scripts": [
+		"index.js"
+	],
+	"keywords": [
+		"regexp",
+		"regex",
+		"re",
+		"regular",
+		"expression",
+		"clone",
+		"duplicate",
+		"modify",
+		"mutate"
+	]
+}
