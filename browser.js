@@ -7,11 +7,6 @@ var flagMap = {
 	multiline: 'm'
 };
 
-function isRegExp (o) {
-  return 'object' == typeof o
-      && '[object RegExp]' == toString.call(o);
-}
-
 function isRegexp(re) {
 	return Object.prototype.toString.call(re) === '[object RegExp]';
 }
