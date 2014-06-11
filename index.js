@@ -1,14 +1,11 @@
 'use strict';
+var isRegexp = require('is-regexp');
 
 var flagMap = {
 	global: 'g',
 	ignoreCase: 'i',
 	multiline: 'm'
 };
-
-function isRegexp(re) {
-	return Object.prototype.toString.call(re) === '[object RegExp]';
-}
 
 function flagSupported(flag) {
 	var supported = true;

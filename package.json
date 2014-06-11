@@ -30,8 +30,11 @@
     "modify",
     "mutate"
   ],
+  "dependencies": {
+    "is-regexp": "^1.0.0"
+  },
   "devDependencies": {
     "mocha": "*",
-    "browserify": "^3.0.0"
+    "browserify": "^4.0.0"
   }
 }
