@@ -1,6 +1,6 @@
 {
 	"name": "clone-regexp",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"description": "Clone and modify a RegExp instance",
 	"license": "MIT",
 	"repository": "sindresorhus/clone-regexp",
