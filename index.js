@@ -1,5 +1,6 @@
 'use strict';
 var isRegexp = require('is-regexp');
+var isSupportedRegexpFlag = require('is-supported-regexp-flag');
 
 var flagMap = {
 	global: 'g',
@@ -7,23 +8,11 @@ var flagMap = {
 	multiline: 'm'
 };
 
-function flagSupported(flag) {
-	var supported = true;
-
-	try {
-		new RegExp('', flag);
-	} catch (err) {
-		supported = false;
-	}
-
-	return supported;
-}
-
-if (flagSupported('y')) {
+if (isSupportedRegexpFlag('y')) {
 	flagMap.sticky = 'y';
 }
 
-if (flagSupported('u')) {
+if (isSupportedRegexpFlag('u')) {
 	flagMap.unicode = 'u';
 }
 

@@ -31,7 +31,8 @@
     "mutate"
   ],
   "dependencies": {
-    "is-regexp": "^1.0.0"
+    "is-regexp": "^1.0.0",
+    "is-supported-regexp-flag": "^0.1.0"
   },
   "devDependencies": {
     "mocha": "*",
