@@ -9,18 +9,11 @@
 $ npm install --save clone-regexp
 ```
 
-```sh
-$ bower install --save clone-regexp
-```
-
-```sh
-$ component install sindresorhus/clone-regexp
-```
-
 
 ## Usage
 
 ```js
+var cloneRegexp = require('clone-regexp');
 var re = /[a-z]/gi;
 
 cloneRegexp(re);

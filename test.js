@@ -1,6 +1,6 @@
 'use strict';
 var assert = require('assert');
-var cloneRegexp = require('./index');
+var cloneRegexp = require('./');
 
 it('should clone and modify RegExp', function () {
 	assert.strictEqual(cloneRegexp(/a/, {multiline: true}).toString(), '/a/m');
