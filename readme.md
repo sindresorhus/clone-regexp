@@ -5,30 +5,31 @@
 
 ## Install
 
-```sh
-$ npm install --save clone-regexp
+```
+$ npm install clone-regexp
 ```
 
 
 ## Usage
 
 ```js
-var cloneRegexp = require('clone-regexp');
-var re = /[a-z]/gi;
+const cloneRegexp = require('clone-regexp');
 
-cloneRegexp(re);
+const regex = /[a-z]/gi;
+
+cloneRegexp(regex);
 //=> /[a-z]/gi
 
-cloneRegexp(re) === re;
+cloneRegexp(regex) === regex;
 //=> false
 
-cloneRegexp(re, {global: false});
+cloneRegexp(regex, {global: false});
 //=> /[a-z]/i
 
-cloneRegexp(re, {multiline: true});
+cloneRegexp(regex, {multiline: true});
 //=> /[a-z]/gim
 
-cloneRegexp(re, {source: 'unicorn'});
+cloneRegexp(regex, {source: 'unicorn'});
 //=> /unicorn/gi
 ```
 
@@ -39,14 +40,14 @@ cloneRegexp(re, {source: 'unicorn'});
 
 #### regex
 
-Type: `regexp`
+Type: `RegExp`
 
-RegExp instance to clone.
+Regex to clone.
 
 
 #### options
 
-Type: `object`  
+Type: `Object`<br>
 Properties: [`source`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/source) [`global`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/global) [`ignoreCase`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/ignoreCase) [`multiline`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/multiline) [`sticky`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/sticky) [`unicode`](http://norbertlindenberg.com/2012/05/ecmascript-supplementary-characters/#RegExp)
 
 Optionally modify the cloned RegExp instance.
@@ -54,4 +55,4 @@ Optionally modify the cloned RegExp instance.
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)

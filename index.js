@@ -1,31 +1,24 @@
 'use strict';
-var isRegexp = require('is-regexp');
-var isSupportedRegexpFlag = require('is-supported-regexp-flag');
+const isRegexp = require('is-regexp');
 
-var flagMap = {
+const flagMap = {
 	global: 'g',
 	ignoreCase: 'i',
-	multiline: 'm'
+	multiline: 'm',
+	sticky: 'y',
+	unicode: 'u'
 };
 
-if (isSupportedRegexpFlag('y')) {
-	flagMap.sticky = 'y';
-}
-
-if (isSupportedRegexpFlag('u')) {
-	flagMap.unicode = 'u';
-}
-
-module.exports = function (re, opts) {
-	if (!isRegexp(re)) {
+module.exports = (regex, options) => {
+	if (!isRegexp(regex)) {
 		throw new TypeError('Expected a RegExp instance');
 	}
 
-	opts = opts || {};
+	options = options || {};
 
-	var flags = Object.keys(flagMap).map(function (el) {
-		return (typeof opts[el] === 'boolean' ? opts[el] : re[el]) ? flagMap[el] : '';
-	}).join('');
+	const flags = Object.keys(flagMap).map(flag => (
+		(typeof options[flag] === 'boolean' ? options[flag] : regex[flag]) ? flagMap[flag] : ''
+	)).join('');
 
-	return new RegExp(opts.source || re.source, flags);
+	return new RegExp(options.source || regex.source, flags);
 };
