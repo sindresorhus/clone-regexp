@@ -11,3 +11,14 @@ test('clone and modify RegExp', t => {
 		multiline: true
 	}).toString(), '/b/gim');
 });
+
+test('lastIndex is copied', t => {
+	const duckRe = /duck/g;
+
+	// Mutate duckRe by running 'test'
+	duckRe.test('duck duck goose');
+
+	const clonedDuckRe = m(duckRe);
+
+	t.is(duckRe.lastIndex, clonedDuckRe.lastIndex);
+});
