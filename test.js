@@ -12,7 +12,7 @@ test('clone and modify RegExp', t => {
 	}).toString(), '/b/gim');
 });
 
-test('lastIndex is copied', t => {
+test('lastIndex is copied by default', t => {
 	const duckRe = /duck/g;
 
 	// Mutate duckRe by running 'test'
@@ -20,5 +20,16 @@ test('lastIndex is copied', t => {
 
 	const clonedDuckRe = m(duckRe);
 
-	t.is(duckRe.lastIndex, clonedDuckRe.lastIndex);
+	t.is(clonedDuckRe.lastIndex, duckRe.lastIndex);
+});
+
+test('lastIndex can be configured via the options object', t => {
+	const duckRe = /duck/g;
+
+	// Mutate duckRe by running 'test'
+	duckRe.test('duck duck goose');
+
+	const clonedDuckRe = m(duckRe, {lastIndex: 0});
+
+	t.is(clonedDuckRe.lastIndex, 0);
 });
