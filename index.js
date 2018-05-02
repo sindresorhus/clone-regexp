@@ -21,7 +21,10 @@ module.exports = (regex, options) => {
 	)).join('');
 
 	const clonedRegexp = new RegExp(options.source || regex.source, flags);
-	clonedRegexp.lastIndex = regex.lastIndex;
+
+	clonedRegexp.lastIndex = (typeof options.lastIndex === 'number')
+		? options.lastIndex
+		: regex.lastIndex;
 
 	return clonedRegexp;
 };
