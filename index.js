@@ -20,5 +20,11 @@ module.exports = (regex, options) => {
 		(typeof options[flag] === 'boolean' ? options[flag] : regex[flag]) ? flagMap[flag] : ''
 	)).join('');
 
-	return new RegExp(options.source || regex.source, flags);
+	const clonedRegexp = new RegExp(options.source || regex.source, flags);
+
+	clonedRegexp.lastIndex = typeof options.lastIndex === 'number' ?
+		options.lastIndex :
+		regex.lastIndex;
+
+	return clonedRegexp;
 };
