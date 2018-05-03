@@ -22,7 +22,7 @@ module.exports = (regex, options) => {
 
 	const clonedRegexp = new RegExp(options.source || regex.source, flags);
 
-	clonedRegexp.lastIndex = (typeof options.lastIndex === 'number') ?
+	clonedRegexp.lastIndex = typeof options.lastIndex === 'number' ?
 		options.lastIndex :
 		regex.lastIndex;
 
