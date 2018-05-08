@@ -5,6 +5,7 @@ const flagMap = {
 	global: 'g',
 	ignoreCase: 'i',
 	multiline: 'm',
+	dotAll: 's',
 	sticky: 'y',
 	unicode: 'u'
 };
