@@ -15,9 +15,9 @@ module.exports = (regex, options = {}) => {
 		throw new TypeError('Expected a RegExp instance');
 	}
 
-	const flags = Object.keys(flagMap).map(flag => (
-		(typeof options[flag] === 'boolean' ? options[flag] : regex[flag]) ? flagMap[flag] : ''
-	)).join('');
+	const flags = Object.keys(flagMap).map(function(flag) {
+		return (typeof options[flag] === 'boolean' ? options[flag] : regex[flag]) ? flagMap[flag] : ''
+	}).join('');
 
 	const clonedRegexp = new RegExp(options.source || regex.source, flags);
 
