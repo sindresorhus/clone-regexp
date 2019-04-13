@@ -10,20 +10,20 @@ const flagMap = {
 	unicode: 'u'
 };
 
-module.exports = (regex, options = {}) => {
-	if (!isRegexp(regex)) {
+module.exports = (regexp, options = {}) => {
+	if (!isRegexp(regexp)) {
 		throw new TypeError('Expected a RegExp instance');
 	}
 
 	const flags = Object.keys(flagMap).map(flag => (
-		(typeof options[flag] === 'boolean' ? options[flag] : regex[flag]) ? flagMap[flag] : ''
+		(typeof options[flag] === 'boolean' ? options[flag] : regexp[flag]) ? flagMap[flag] : ''
 	)).join('');
 
-	const clonedRegexp = new RegExp(options.source || regex.source, flags);
+	const clonedRegexp = new RegExp(options.source || regexp.source, flags);
 
 	clonedRegexp.lastIndex = typeof options.lastIndex === 'number' ?
 		options.lastIndex :
-		regex.lastIndex;
+		regexp.lastIndex;
 
 	return clonedRegexp;
 };
