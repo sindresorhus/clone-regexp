@@ -1,5 +1,5 @@
 import {expectType} from 'tsd';
-import cloneRegexp = require('.');
+import cloneRegexp from './index.js';
 
 const regex = /[a-z]/gi;
 

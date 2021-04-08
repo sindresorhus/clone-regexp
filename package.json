@@ -4,13 +4,16 @@
 	"description": "Clone and modify a RegExp instance",
 	"license": "MIT",
 	"repository": "sindresorhus/clone-regexp",
+	"funding": "https://github.com/sponsors/sindresorhus",
 	"author": {
 		"name": "Sindre Sorhus",
 		"email": "sindresorhus@gmail.com",
-		"url": "sindresorhus.com"
+		"url": "https://sindresorhus.com"
 	},
+	"type": "module",
+	"exports": "./index.js",
 	"engines": {
-		"node": ">=6"
+		"node": ">=12"
 	},
 	"scripts": {
 		"test": "xo && ava && tsd"
@@ -22,7 +25,6 @@
 	"keywords": [
 		"regexp",
 		"regex",
-		"re",
 		"regular",
 		"expression",
 		"clone",
@@ -31,11 +33,11 @@
 		"mutate"
 	],
 	"dependencies": {
-		"is-regexp": "^2.0.0"
+		"is-regexp": "^3.0.0"
 	},
 	"devDependencies": {
-		"ava": "^1.4.1",
-		"tsd": "^0.7.2",
-		"xo": "^0.24.0"
+		"ava": "^3.15.0",
+		"tsd": "^0.14.0",
+		"xo": "^0.38.2"
 	}
 }

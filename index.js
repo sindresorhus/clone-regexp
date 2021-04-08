@@ -1,5 +1,4 @@
-'use strict';
-const isRegexp = require('is-regexp');
+import isRegexp from 'is-regexp';
 
 const flagMap = {
 	global: 'g',
@@ -10,7 +9,7 @@ const flagMap = {
 	unicode: 'u'
 };
 
-module.exports = (regexp, options = {}) => {
+export default function clonedRegexp(regexp, options = {}) {
 	if (!isRegexp(regexp)) {
 		throw new TypeError('Expected a RegExp instance');
 	}
@@ -26,4 +25,4 @@ module.exports = (regexp, options = {}) => {
 		regexp.lastIndex;
 
 	return clonedRegexp;
-};
+}

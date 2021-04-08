@@ -1,5 +1,5 @@
 import test from 'ava';
-import cloneRegexp from '.';
+import cloneRegexp from './index.js';
 
 test('clone and modify RegExp', t => {
 	t.is(cloneRegexp(/a/, {multiline: true}).toString(), '/a/m');
