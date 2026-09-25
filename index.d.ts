@@ -1,8 +1,13 @@
-export interface Options {
+export type Options = {
 	/**
 	Modifies the [`source`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/source) property of the cloned `RegExp` instance.
 	*/
 	source?: string;
+
+	/**
+	Modifies the [`hasIndices`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/hasIndices) property of the cloned `RegExp` instance.
+	*/
+	hasIndices?: boolean;
 
 	/**
 	Modifies the [`global`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/global) property of the cloned `RegExp` instance.
@@ -35,10 +40,17 @@ export interface Options {
 	unicode?: boolean;
 
 	/**
+	Modifies the [`unicodeSets`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/unicodeSets) property of the cloned `RegExp` instance.
+
+	Mutually exclusive with `unicode`. Turning it on for a source that is not valid under the `v` flag throws a `SyntaxError`.
+	*/
+	unicodeSets?: boolean;
+
+	/**
 	Modifies the [`lastIndex`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/lastIndex) property of the cloned `RegExp` instance.
 	*/
 	lastIndex?: number;
-}
+};
 
 /**
 Clone and modify a [RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) instance.
