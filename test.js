@@ -15,6 +15,10 @@ test('clone and modify RegExp', () => {
 	}).toString(), '/b/gim');
 });
 
+test('an empty source replaces the pattern', () => {
+	assert.equal(cloneRegexp(/abc/g, {source: ''}).toString(), '/(?:)/g');
+});
+
 test('throws on a non-RegExp', () => {
 	assert.throws(() => cloneRegexp('unicorn'), {message: 'Expected a RegExp instance'});
 });

@@ -31,7 +31,7 @@ export default function clonedRegexp(regexp, options = {}) {
 		(typeof options[property] === 'boolean' ? options[property] : regexp[property]) ? character : ''
 	)).join('');
 
-	const clone = new RegExp(options.source || regexp.source, flags);
+	const clone = new RegExp(options.source ?? regexp.source, flags);
 
 	clone.lastIndex = typeof options.lastIndex === 'number'
 		? options.lastIndex
